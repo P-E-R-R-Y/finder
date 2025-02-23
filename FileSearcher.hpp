@@ -64,7 +64,7 @@ class FileSearcher {
                         res.push_back(path.substr(folder.size() + (folder.back() != '/')));
                 }
             }
-            for (int i = 0; i < res.size(); i++) {
+            for (size_t i = 0; i < res.size(); i++) {
                 std::cout << "--------------------" << std::endl;
                 std::cout << res[i] << std::endl;
                 std::cout << "--------------------" << std::endl;
