@@ -21,10 +21,11 @@
  * @brief load shared libraries & retrieve symbols
  * 
  */
+[[deprecated("Use DynamicLibrary instead")]]
 class DynamicLoader {
     public:
     
-        DynamicLoader() {
+        DynamicLoader(): _lib(nullptr), _name("") {
         }
 
         DynamicLoader(std::string str): _lib(dlopen(str.c_str(), RTLD_NOW)), _name(str) {
