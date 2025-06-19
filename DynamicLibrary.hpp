@@ -25,7 +25,6 @@ class DynamicLibrary {
         }
 
         ~DynamicLibrary() {
-            int ret = 0;
             #if defined(WIN32)
                 if (!FreeLibrary(_lib)) {
                     this->handleError();
@@ -49,7 +48,7 @@ class DynamicLibrary {
                 symbol =  reinterpret_cast<T>(dlsym(_lib, name.c_str()));
             #endif
             if (!symbol) {
-                this->handleError();
+                this->HandleError();
             }
             return symbol;
         }
